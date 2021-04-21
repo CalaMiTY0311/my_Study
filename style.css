@@ -64,3 +64,9 @@ h2{
 #image-container{
     display:none;
 }
+#color{
+  color:white;
+}
+h1,ol{
+  color=blue;
+}
