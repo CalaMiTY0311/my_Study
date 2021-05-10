@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title></title>
   </head> -->
+  <article>
+  </article>
   <body>
     <input type="button" value="fetch" onclick="
       fetch('html').then(function(response){
         response.text().then(function(text){
-          alert(text);
+          document.querySelector('article').innerHTML = text;
         })
       })
       ">
