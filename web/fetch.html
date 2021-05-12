@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <!-- <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head> -->
+  <article>
+
+  </article>
+  <body>
+    <input type="button" value="fetch" onclick="
+    /*
+      fetch('html').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      })
+      */
+      //Asynchronous
+      fetch('html').then(function(response){ /* response은 만들어진 객체 설명서참고 */
+        if(response.status == '404'){
+          alert('Not found')
+        }
+      });
+      console.log(1);
+      console.log(2);
+    ">
+      <!--  document.querySelector('article').innerHTML = text;
+            UI in text-->
+  </body>
+</html>
