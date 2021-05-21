@@ -1,0 +1,14 @@
+우리가 만든 서비스(웹) = mine -> client
+우리의 사용 = user -> resource owner
+Their(google,Facebook,Twitter)라는 서비스에 회원가입이 되어있 상태 -> resource server
+
+first
+client에서resource server로 등록해준다.
+
+등록을 하게되면 서비스마다 다르지만 공통적으로
+client id             ex)1    식별자 아이디
+clinet secret         ex)2    아이디에 대한 비밀번호
+
+Authorized redirect URLs ex)https://client/callback Authorized값을 전달해줄 주소
+
+facebook oAuth시스템 등록 과정
