@@ -15,7 +15,9 @@
         xfbml      : true,                     // Parse social plugins on this webpage.
         version    : 'v10.0'           // Use this Graph API version for this call.
       });
-
+      var callback =function(response){
+        console.log(response);
+      }
 
       FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
         statusChangeCallback(response);        // Returns the login status.
