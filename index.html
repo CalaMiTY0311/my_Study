@@ -17,12 +17,12 @@
 
       var callback = function(response){
         console.log(response);
-        // if(response.status === 'unknown'){
-        //   document.querySelector('#authBtn').value = 'Logout'
-        // }  else {
-        //   document.querySelector('#authBtn').value = 'Login'
-        // }
-        //  statusChangeCallback(response);
+        if(response.status === 'unknown'){
+          document.querySelector('#authBtn').value = 'Logout'
+        }  else {
+          document.querySelector('#authBtn').value = 'Login'
+        }
+         statusChangeCallback(response);
       }
         FB.getLoginStatus(callback);
       };
@@ -47,7 +47,19 @@
     </ol>
 
   <div id="article">
-
+    <input type="button" id="authBtn" value="checking..." onclick="
+        if(this.value === 'login'){
+          //now logout
+          FB.login(function(response){
+            console.log('login=>',response);
+          });
+        } else{
+          //now login
+          FB.logout(function(response){
+            console.log('logout=>',response);
+          });
+        }
+      ">
 <h2>WEB</h2>
 
 <p>
