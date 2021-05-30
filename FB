@@ -21,3 +21,17 @@ FB.getLoginStatus(callback);
 </script>
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  <input type="button" id="authBtn" value="checking..." onclick="
+    if(this.value === 'login'){
+      //now logout
+      FB.login(function(response){
+        console.log('login=>',response);
+      });
+    } else{
+      //now login
+      FB.logout(function(response){
+        console.log('logout=>',response);
+      });
+    }
+  ">
