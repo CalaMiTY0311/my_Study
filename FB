@@ -1,0 +1,23 @@
+<script>
+window.fbAsyncInit = function() {
+FB.init({
+ appId      : '297803575353455',
+ cookie     : true,                     // Enable cookies to allow the server to access the session.
+ xfbml      : true,                     // Parse social plugins on this webpage.
+ version    : 'v10.0'           // Use this Graph API version for this call.
+});
+
+var callback = function(response){
+ console.log(response);
+ if(response.status === 'unknown'){
+   document.querySelector('#authBtn').value = 'Logout'
+ }  else {
+   document.querySelector('#authBtn').value = 'Login'
+ }
+//  statusChangeCallback(response);
+}
+FB.getLoginStatus(callback);
+};
+</script>
+<!-- Load the JS SDK asynchronously -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
