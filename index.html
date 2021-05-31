@@ -17,19 +17,33 @@
 
       var callback = function(response){
         console.log(response);
+        // statusChangeCallback(response);
         if(response.status === 'connected'){
           document.querySelector('#authBtn').value = 'Logout';
         }  else {
           document.querySelector('#authBtn').value = 'Login';
-        }
-         // statusChangeCallback(response);
-       }
+            }
+          }
         FB.getLoginStatus(callback);
+
       };
 </script>
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
+<input type="button" id="authBtn" value="checking..." onclick="
+    if(this.value === 'login'){
+      //now logout
+      FB.login(function(response){
+        console.log('login=>',res);
+      });
+    } else{
+      //now login
+      FB.logout(function(response){
+        console.log('logout=>',res);
+      });
+    }
+  ">
 <link rel="shortcut icon" href="#">
 <body>
     <div>
@@ -47,19 +61,6 @@
     </ol>
 
   <div id="article">
-    <input type="button" id="authBtn" value="checking..." onclick="
-        if(this.value === 'login'){
-          //now logout
-          FB.login(function(res){
-            console.log('login=>',res);
-          });
-        } else{
-          //now login
-          FB.logout(function(res){
-            console.log('logout=>',res);
-          });
-        }
-      ">
 <h2>WEB</h2>
 
 <p>
