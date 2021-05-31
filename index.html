@@ -32,15 +32,15 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
 <input type="button" id="authBtn" value="checking..." onclick="
-    if(this.value === 'login'){
-      //now logout
+    if(this.value === 'Login'){
+      //now Logout
       FB.login(function(response){
-        console.log('login=>',res);
+        console.log('Login=>',response);
       });
     } else{
       //now login
       FB.logout(function(response){
-        console.log('logout=>',res);
+        console.log('Logout=>',response);
       });
     }
   ">
