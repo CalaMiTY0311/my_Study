@@ -35,12 +35,12 @@
     if(this.value === 'Login'){
       //now Logout
       FB.login(function(response){
-        console.log('Login=>',response);
+        console.log('login=>',response);
       });
     } else{
       //now login
       FB.logout(function(response){
-        console.log('Logout=>',response);
+        console.log('logout=>',response);
       });
     }
   ">
