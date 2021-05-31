@@ -14,7 +14,7 @@
     if(response.status === 'connected'){
       document.querySelector('#authBtn').value = 'Logout';
       FB.api('/me',function(resp){
-        document.querySelector('#name').innerHTML = resp.name;
+        document.querySelector('#name').innerHTML ='welcome ,'+ resp.name;
         });
     }  else {
       document.querySelector('#authBtn').value = 'Login';
@@ -37,7 +37,7 @@
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
-<div id="name"></div>
+<span id="name"></span>
 <input type="button" id="authBtn" value="checking..." onclick="
     if(this.value === 'Login'){
       //now Logout
