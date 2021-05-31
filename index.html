@@ -7,6 +7,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
   <script>
+
+  var checkLoginStatus = function(response){
+    console.log(response);
+    // statusChangeCallback(response);
+    if(response.status === 'connected'){
+      document.querySelector('#authBtn').value = 'Logout';
+    }  else {
+      document.querySelector('#authBtn').value = 'Login';
+        }
+      }
+
   window.fbAsyncInit = function() {
     FB.init({
         appId      : '297803575353455',
@@ -15,16 +26,8 @@
         version    : 'v10.0'           // Use this Graph API version for this call.
       });
 
-      var callback = function(response){
-        console.log(response);
-        // statusChangeCallback(response);
-        if(response.status === 'connected'){
-          document.querySelector('#authBtn').value = 'Logout';
-        }  else {
-          document.querySelector('#authBtn').value = 'Login';
-            }
-          }
-        FB.getLoginStatus(callback);
+
+        FB.getLoginStatus(checkLoginStatus);
 
       };
 </script>
@@ -36,11 +39,13 @@
       //now Logout
       FB.login(function(response){
         console.log('login=>',response);
+        checkLoginStatus(response);
       });
     } else{
       //now login
       FB.logout(function(response){
         console.log('logout=>',response);
+        checkLoginStatus(response);
       });
     }
   ">
