@@ -16,11 +16,11 @@
       FB.api('/me',function(resp){
         document.querySelector('#name').innerHTML ='welcome ,'+ resp.name;
         });
-    }  else {
-      document.querySelector('#authBtn').value = 'Login';
-      document.querySelector('#name').innerHTML ='';
+      }  else {
+          document.querySelector('#authBtn').value = 'Login';
+          document.querySelector('#name').innerHTML ='';
         }
-      }
+    }
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -38,7 +38,6 @@
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
-<span id="name"></span>
 <input type="button" id="authBtn" value="checking..." onclick="
     if(this.value === 'Login'){
       //now Logout
@@ -54,6 +53,8 @@
       });
     }
   ">
+<!-- <div> is line break so if you don't want need use <span> -->
+<span id="name"></span>
 <link rel="shortcut icon" href="#">
 <body>
     <div>
